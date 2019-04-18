@@ -1,3 +1,10 @@
-import './test.scss'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './app'
 
-console.log(2333)
+const container = document.querySelector('#app')
+
+ReactDOM.render(
+  <App />,
+  container
+)

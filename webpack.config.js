@@ -12,8 +12,6 @@ if(['development', 'production'].some(env => modeArg.includes(env))) {
   mode = modeArg && modeArg.slice('--mode='.length)
 }
 
-console.log(mode)
-
 const commonConfig = {
   entry: './src/index.js', // string | object | array
   output: {
@@ -49,7 +47,9 @@ const commonConfig = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 2
+              importLoaders: 2,
+              modules: true,
+              localIdentName: '[name]-[local]-[hash:base64:5]',
             }
           }, // translates CSS into CommonJS
           'postcss-loader',
@@ -67,7 +67,7 @@ const commonConfig = {
     // extensions that are used
     extensions: ['.js', '.scss', '.json', '.jsx', '.css'],
     alias: {
-      'app': path.resolve(__dirname, 'app')
+      'app': path.resolve(__dirname, 'src/components')
     },
   },
 
@@ -87,7 +87,7 @@ const commonConfig = {
   target: 'web', // enum
   // the environment in which the bundle should run
   // changes chunk loading behavior and available modules
-  externals: ['react', /^@angular/],
+  // externals: ['react', /^@angular/],
   // Don't follow/bundle these modules, but request them at runtime from the environment
   stats: 'errors-only',
   // lets you precisely control what bundle information gets displayed
