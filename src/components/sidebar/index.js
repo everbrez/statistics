@@ -1,5 +1,6 @@
 import React from 'react'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
+import { makeStyles, useTheme } from '@material-ui/styles'
 
 function Sidebar(props) {
   return (
