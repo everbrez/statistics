@@ -4,7 +4,7 @@ import Sidebar from 'app/sidebar'
 
 function Login(props) {
   return (
-    <div className={classes.root}>
+    <div>
       <Topbar />
       <Sidebar />
     </div>

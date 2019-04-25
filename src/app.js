@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './app.scss'
 import Login from 'app/login'
 import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles'
 import orange from '@material-ui/core/colors/orange';
